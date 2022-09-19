@@ -1,0 +1,13 @@
+.sidebar-options{
+    color: grey;
+    transition: 400ms;
+    padding: 5px;
+}
+
+.sidebar-options > span {
+    margin: 5px;
+}
+
+.sidebar-options:hover{
+    color: white;
+}
