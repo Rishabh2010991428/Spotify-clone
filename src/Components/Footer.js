@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Footer.css";
-import {grid} from ma
 function Footer() {
   return (
     <div className='footer'>
