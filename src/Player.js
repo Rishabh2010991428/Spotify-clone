@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Sidebar from "./Sidebar";
 import "./Player.css";
 
-function Player() {
+function Player({spotify}) {
   return (
     <div className='player'>
         <div className='player-body'>

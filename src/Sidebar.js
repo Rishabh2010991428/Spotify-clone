@@ -1,8 +1,11 @@
 import React from 'react';
+import { useDataLayerValue } from './DataLayer';
 import "./Sidebar.css"
 import Sidebaroptions from './Sidebaroptions';
 
 function Sidebar() {
+  // destructuring and getting playlists
+  const[{playlists}, dispatch] = useDataLayerValue();
   return (
     <>
       <div className='sidebar'>
@@ -12,13 +15,14 @@ function Sidebar() {
         <Sidebaroptions title="Search" icon="fa-solid fa-magnifying-glass" />
         <Sidebaroptions title="Library" icon="fa-solid fa-book-open" />
         <br />
-        <strong className='Sidebar-playlist'>Playlist</strong>
+        <strong className='Sidebar-playlist'>PLAYLISTS</strong>
         <hr id='playlist-hrline'/>
+        {playlists?.items?.map(playlist=>(
+          <Sidebaroptions title={playlist.name}/>
+        ))}
       </div>
-
-
     </>
-  )
+  );
 }
 
 export default Sidebar
