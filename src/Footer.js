@@ -1,35 +1,43 @@
 import React from 'react';
 import "./Footer.css";
+import ShuffleIcon from '@mui/icons-material/Shuffle';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import RepeatIcon from '@mui/icons-material/Repeat';
+import { PlaylistPlay, VolumeDown } from '@mui/icons-material';
+import { Grid, Slider } from '@mui/material';
 function Footer() {
   return (
     <div className='footer'>
       <div className='footer-left'>
-        <h3>Albums</h3>
+        <img src='https://tse2.mm.bing.net/th?id=OIP.7VRXG0fLMkbT2CfQ6Kj4YAHaHa&pid=Api&P=0' alt="" className='footer-albumLogo'/>
+        <div className='footer-songInfo'>
+          <h4>StarBoy</h4>
+          <p>The Weeknd</p>
+        </div>
       </div>
 
       <div className='footer-center'>
-        <i className="fa-solid fa-shuffle"></i>
-        <i className="fa-solid fa-backward"></i>
-        <i className="fa-regular fa-circle-play"></i>
-        <i className="fa-solid fa-forward"></i>
-        <i className="fa-solid fa-repeat"></i>
+        <ShuffleIcon className="footer-green"/>
+        <SkipPreviousIcon className='footer-icon'/>
+        <PlayCircleOutlineIcon fontSize='large' className='footer-icon'/>
+        <SkipNextIcon className='footer-icon'/>
+        <RepeatIcon className="footer-green"/>
       </div>
 
       <div className='footer-right'>
-      {/* <Grid container spacing={2}>
-          <Grid item xs={6} md={8}>
-            <Item>xs=6 md=8</Item>
+      <Grid container spacing={2}>
+          <Grid item>
+            <PlaylistPlay/>
           </Grid>
-          <Grid item xs={6} md={4}>
-            <Item>xs=6 md=4</Item>
+          <Grid item>
+            <VolumeDown/>
           </Grid>
-          <Grid item xs={6} md={4}>
-            <Item>xs=6 md=4</Item>
+          <Grid item xs>
+            <Slider/>
           </Grid>
-          <Grid item xs={6} md={8}>
-            <Item>xs=6 md=8</Item>
-          </Grid>
-        </Grid> */}
+        </Grid>
       </div>
     </div>
   )
