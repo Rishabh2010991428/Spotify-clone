@@ -9,7 +9,6 @@ import { useDataLayerValue } from './DataLayer';
 
 const spotify = new SpotifyWebApi();
 
-
 function App() {
   const [{user, token}, dispatch] = useDataLayerValue();
 
@@ -43,9 +42,16 @@ function App() {
           playlists: playlists,
         });
       });
+      // discover weekly playlist id
+      spotify.getPlaylist('37i9dQZEVXcOM4Bn9ZArJL').then(response =>
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+        )
     }
 
-    console.log('i have a token->', token);
+    // console.log('i have a token->', token);
   }, []);
 
   return (
