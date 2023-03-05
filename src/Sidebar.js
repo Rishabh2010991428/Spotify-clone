@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDataLayerValue } from './DataLayer';
-import "./Sidebar.css"
+import "./Sidebar.css";
 import Sidebaroptions from './Sidebaroptions';
 
 function Sidebar() {
@@ -17,12 +17,12 @@ function Sidebar() {
         <br />
         <strong className='Sidebar-playlist'>PLAYLISTS</strong>
         <hr id='playlist-hrline'/>
-        {playlists?.items?.map(playlist=>(
-          <Sidebaroptions title={playlist.name}/>
+        {playlists?.items?.map((playlist) => (
+          <Sidebaroptions key={playlist.id} title={playlist.name}/>
         ))}
       </div>
     </>
   );
 }
 
-export default Sidebar
+export default Sidebar;
